@@ -19,18 +19,26 @@ pip install --upgrade pip
 pip install -r requirements.txt 
 ```
 
-## Train 
-1. `cd` to training script folder
+## Pre-Train 
+1. `cd` to the pre-training script folder
 ```
 cd src
 ```
 2. Run `train_joint.py`
 ```
 CUDA_VISIBLE_DEVICES='0' python3 train_joint.py --model_save_dir=OUTPUT_WEIGHT_DIR --pseudo_sentence_dir='../../datasets/osm_pseudo_sent/world/' --nl_sentence_dir='../../datasets/wikidata/world_georelation/joint_v2/' --batch_size=28   --lr=1e-5 --spatial_dist_fill=900 --placename_to_osmid_path='../../datasets/osm_pseudo_sent/name-osmid-dict/placename_to_osmid.json' 
-
 ```
 
-## Inference
+## Downstream Tasks
+
+### Toponym Detection 
+
+
+### Toponym Linking
+
+### Geo-entity Typing 
+
+
 
 ## Cite 
 ```
