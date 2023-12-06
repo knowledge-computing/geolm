@@ -49,12 +49,19 @@ python3 test_geobert_toponym.py  --model_option='geobert-base' --model_save_path
 
 ### Toponym Linking (Unsupervised)
 ```
-CUDA_VISIBLE_DEVICES='1' python3 multi_link_geonames.py --model_name='joint-base' --query_dataset_path=DATASET_PATH --ref_dataset_path=CANDIDATES_FILE_PATH --distance_norm_factor=100 --spatial_dist_fill=90000 --spatial_bert_weight_dir=PRETRAINED_WEIGHT_DIR --spatial_bert_weight_name=PRETRAINED_WEIGHT_FILE --out_dir=OUTPUT_FOLDER
+python3 multi_link_geonames.py --model_name='joint-base' --query_dataset_path=DATASET_PATH --ref_dataset_path=CANDIDATES_FILE_PATH --distance_norm_factor=100 --spatial_dist_fill=90000 --spatial_bert_weight_dir=PRETRAINED_WEIGHT_DIR --spatial_bert_weight_name=PRETRAINED_WEIGHT_FILE --out_dir=OUTPUT_FOLDER
 ```
 
 
 ### Geo-entity Typing (Supervised)
-
+1. Train with in-domain dataset
+```
+python3 train_cls_joint.py --lr=1e-5 --sep_between_neighbors --bert_option='bert-base' --with_type --mlm_checkpoint_path=PRETRAINED_MODEL_PATH --epochs=30 --max_token_len=512 --model_save_dir=OUTPUT_TYPING_WEIGHT_DIR --spatial_dist_fill=90000
+```
+2. Test with in-domain dataset
+```
+python3 test_cls_joint.py --sep_between_neighbors --bert_option='bert-base' --with_type --checkpoint_path=TYPING_WEIGHT_PATH
+```
 
 
 ## Cite 
