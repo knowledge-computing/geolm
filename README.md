@@ -31,7 +31,7 @@ python3 train_joint.py --model_save_dir=OUTPUT_WEIGHT_DIR --pseudo_sentence_dir=
 
 ## Downstream Tasks
 
-### Toponym Detection 
+### Toponym Detection (Supervised)
 1. Train with in-domain dataset
 ```
 cd experiments/toponym_detection/
@@ -47,11 +47,13 @@ python3 test_geobert_toponym.py  --model_option='geobert-base' --model_save_path
 
 ```
 
-### Toponym Linking
+### Toponym Linking (Unsupervised)
+```
+CUDA_VISIBLE_DEVICES='1' python3 multi_link_geonames.py --model_name='joint-base' --query_dataset_path=DATASET_PATH --ref_dataset_path=CANDIDATES_FILE_PATH --distance_norm_factor=100 --spatial_dist_fill=90000 --spatial_bert_weight_dir=PRETRAINED_WEIGHT_DIR --spatial_bert_weight_name=PRETRAINED_WEIGHT_FILE --out_dir=OUTPUT_FOLDER
+```
 
 
-
-### Geo-entity Typing 
+### Geo-entity Typing (Supervised)
 
 
 
