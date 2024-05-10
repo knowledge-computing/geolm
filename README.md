@@ -74,4 +74,6 @@ python3 test_cls_joint.py --sep_between_neighbors --bert_option='bert-base' --wi
 }
 ```
 
+## License
+CC BY-NC 4.0
 
