@@ -2,6 +2,8 @@
 
 [[Paper link](https://arxiv.org/pdf/2310.14478.pdf)] [[Toponym Detection Demo](https://huggingface.co/zekun-li/geolm-base-toponym-recognition)] [[CodeForHuggingFace](https://github.com/zekun-li/transformers/tree/geolm)]
 
+[**NEWS**] GeoLM models on HuggingFace have been migrated to [knowledge-computing](https://huggingface.co/knowledge-computing) organization account
+
 ## Install 
 
 1. Clone this repository:
